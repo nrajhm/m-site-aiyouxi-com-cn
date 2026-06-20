@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>澳门新葡京 · 用途速览</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+            background: #fafafa;
+            color: #1e1e1e;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 2rem;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* Hero 简版 */
+        .hero {
+            margin-bottom: 2.8rem;
+            border-bottom: 1px solid #e8e8e8;
+            padding-bottom: 2.2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1b1b1b;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .tagline {
+            font-size: 1rem;
+            color: #5f5f5f;
+            max-width: 32em;
+            font-weight: 350;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero .meta-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            background: #eeeeee;
+            padding: 0.15rem 0.9rem;
+            border-radius: 20px;
+            color: #404040;
+            margin-top: 0.3rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* 正文层级 */
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin: 2.6rem 0 0.8rem;
+            color: #1b1b1b;
+            letter-spacing: -0.01em;
+            border-left: 3px solid #d0d0d0;
+            padding-left: 0.75rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 2rem 0 0.5rem;
+            color: #222;
+        }
+
+        p {
+            margin: 0 0 1.2rem;
+            color: #2c2c2c;
+            font-weight: 350;
+            font-size: 0.98rem;
+        }
+
+        a {
+            color: #1f3a6b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #10233e;
+            text-decoration-thickness: 2px;
+        }
+
+        /* 卡片 / 亮点块 极简无框 */
+        .highlight-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin: 1.8rem 0 1.2rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 0.25rem 0;
+        }
+
+        .highlight-num {
+            font-size: 1.2rem;
+            font-weight: 450;
+            min-width: 2rem;
+            color: #7a7a7a;
+            line-height: 1.5;
+        }
+
+        .highlight-content {
+            flex: 1;
+        }
+
+        .highlight-title {
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            color: #1e1e1e;
+        }
+
+        .highlight-desc {
+            font-size: 0.9rem;
+            color: #4a4a4a;
+        }
+
+        /* 使用场景两个小标签块 */
+        .scenario-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem 2rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .scenario-block {
+            flex: 1 1 200px;
+            border-left: 2px solid #e0e0e0;
+            padding-left: 1.2rem;
+        }
+
+        .scenario-block .sc-title {
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .scenario-block p {
+            font-size: 0.88rem;
+            margin-bottom: 0.2rem;
+            color: #4b4b4b;
+        }
+
+        /* FAQ 简约摘要 */
+        .faq-mini {
+            margin: 2.2rem 0 0.5rem;
+            border-top: 1px solid #ececec;
+            padding-top: 1.8rem;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            margin: 1rem 0 0.15rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-a {
+            font-size: 0.9rem;
+            color: #3a3a3a;
+            margin-left: 0.3rem;
+            margin-bottom: 0.9rem;
+            padding-left: 0.5rem;
+            border-left: 2px solid #e2e2e2;
+        }
+
+        /* 提示文本 克制 */
+        .note-box {
+            background: #f2f2f2;
+            padding: 1rem 1.4rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #2e2e2e;
+            margin: 2rem 0 1rem;
+            line-height: 1.5;
+            border-left: 4px solid #b0b0b0;
+        }
+
+        .note-box strong {
+            font-weight: 500;
+        }
+
+        /* 底部 */
+        .footer-note {
+            margin-top: 3rem;
+            font-size: 0.78rem;
+            color: #7a7a7a;
+            border-top: 1px solid #eaeaea;
+            padding-top: 1.8rem;
+            text-align: left;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #eaeaea;
+            margin: 2rem 0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 520px) {
+            .container {
+                padding: 2rem 1.2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .highlight-item {
+                gap: 0.6rem;
+            }
+
+            .scenario-flex {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- hero 区域：直接点明网站用途 -->
+    <div class="hero">
+        <h1>澳门新葡京 · 识别与用途</h1>
+        <div class="tagline">
+            面向希望快速了解平台定位、使用场景及可信边界的访问者。
+        </div>
+        <span class="meta-badge">产品摘要 · 知识型</span>
+    </div>
+
+    <!-- 第一段：摘要 / 快速识别网站是做什么的 -->
+    <p>
+        <a href="https://apps-xinpujing.com">澳门新葡京</a> 是一个以数字服务为载体、面向中文用户的综合互动平台。从名称与域名看，网站延续了澳门博彩及娱乐文化中的标志性符号，但其实际功能更侧重于信息整合、工具型应用及社区化内容展示。初次访问的用户可将该站点视为一个聚合型入口，网站本身以清晰的功能分区来降低认知负荷，而非单纯依赖品牌名称做延伸。
+    </p>
+
+    <!-- 特点 / 亮点：采用带编号的简洁卡片 -->
+    <h2>功能亮点</h2>
+    <div class="highlight-grid">
+        <div class="highlight-item">
+            <span class="highlight-num">01</span>
+            <div class="highlight-content">
+                <div class="highlight-title">内容与工具的混合结构</div>
+                <div class="highlight-desc">页面既包含信息型栏目，也接入交互性模块，用户可在同一域名下完成资讯查阅及轻量操作，无需多次跳转。</div>
+            </div>
+        </div>
+        <div class="highlight-item">
+            <span class="highlight-num">02</span>
+            <div class="highlight-content">
+                <div class="highlight-title">辨识度优先的视觉语言</div>
+                <div class="highlight-desc">界面采用高对比度区域划分与品牌色点缀，重点功能入口得到保留，适合需要快速定位服务的用户。</div>
+            </div>
+        </div>
+        <div class="highlight-item">
+            <span class="highlight-num">03</span>
+            <div class="highlight-content">
+                <div class="highlight-title">中文化体验的延续</div>
+                <div class="highlight-desc">从信息架构到用语习惯均面向中文使用者设计，降低理解门槛；同时域名直接对应品牌，方便记忆与传播。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 使用建议 / 场景 -->
+    <h2>典型使用场景</h2>
+    <div class="scenario-flex">
+        <div class="scenario-block">
+            <div class="sc-title">🔍 信息浏览与比较</div>
+            <p>用户希望一次性浏览平台所提供的分类内容，或对比不同板块的更新频率与风格。建议直接访问主页并观察导航结构。</p>
+        </div>
+        <div class="scenario-block">
+            <div class="sc-title">📱 快速体验工具模块</div>
+            <p>部分页面集成了轻量级应用（如查询、简易娱乐模拟），适合零散时间试用，无需注册即可初步了解功能逻辑。</p>
+        </div>
+        <div class="scenario-block">
+            <div class="sc-title">🧩 品牌认知与验证</div>
+            <p>对于听闻“澳门新葡京”名称但不确定实际服务类型的用户，该网站可直接展示其当前形态与内容边界，帮助快速形成判断。</p>
+        </div>
+    </div>
+
+    <!-- 可信但克制的访问说明 -->
+    <h2>关于访问的几点事实</h2>
+    <p>
+        与许多垂直类站点不同，<a href="https://apps-xinpujing.com">澳门新葡京</a> 并未采用大面积引导注册或强制下载的策略。页面中的链接与交互组件均有明确的文字提示，用户可自主决定操作深度。需要说明的是，网站内容涉及部分模拟类或娱乐类表述，其初衷偏向信息展示与文化映射，而非直接提供金融或博彩服务。访问时请根据个人偏好与当地法规自行判断。
+    </p>
+
+    <!-- 附加 FAQ 摘要（选2个常见疑问） -->
+    <div class="faq-mini">
+        <h3 style="border-left: none; padding-left:0; margin-top:0;">常见疑问 · 摘要</h3>
+
+        <div class="faq-q">Q：网站需要付费才能使用基本功能吗？</div>
+        <div class="faq-a">目前核心的信息浏览和部分工具模块无需付费。特定增值或互动内容可能有额外提示，以页面实时标注为准。</div>
+
+        <div class="faq-q">Q：这个网站与澳门实体娱乐场直接相关吗？</div>
+        <div class="faq-a">网站名称借用了知名品牌元素，但其运营主体与实体赌场之间并无公开的附属关系。建议将线上产品视为独立数字展示窗口，保持合理预期。</div>
+    </div>
+
+    <!-- 提示：客观且克制 -->
+    <div class="note-box">
+        <strong>使用提示：</strong> 无论界面如何设计，请始终对任何线上平台保持信息核实的习惯。<a href="https://apps-xinpujing.com" style="text-decoration: underline;">澳门新葡京</a> 目前定位为混合型站点，不构成任何投资或参与建议。若涉及任何形式的虚拟资产或筹码，请务必阅读平台的相关条款与风险说明。
+    </div>
+
+    <hr>
+    <div class="footer-note">
+        本页面仅作介绍用途 · 内容基于公开信息与产品观察 · 版本 2406
+    </div>
+</div>
+</body>
+</html>
